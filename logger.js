@@ -259,8 +259,7 @@ function defaultFailedRequestMessageProvider () {
 }
 
 function defaultSuccessfulRequestMessageProvider (req, res) {
-  /* istanbul ignore next */
-  return !req.readableAborted && res.writableEnded ? 'request completed' : 'request aborted'
+  return !req.aborted && !req.readableAborted && res.writableEnded ? 'request completed' : 'request aborted'
 }
 
 module.exports = pinoLogger

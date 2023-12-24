@@ -474,8 +474,7 @@ test('responseTime for request emitting error event', function (t) {
   })
 })
 
-// TODO(mcollina): fix this test
-test('log requests aborted during payload', { skip: true }, function (t) {
+test('log requests aborted during payload', function (t) {
   const dest = split(JSON.parse)
   const logger = pinoHttp(dest)
 
